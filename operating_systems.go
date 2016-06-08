@@ -4,38 +4,53 @@
 
 package user_agent
 
-import "strings"
+import (
+	"regexp"
+	"strings"
+)
+
+var (
+	iosRegexp, _ = regexp.Compile("CPU (?:iPhone )?OS ([\\d_]+)")
+)
 
 // Normalize the name of the operating system. By now, this just
-// affects to Windows NT.
+// affects to Windows NT and iOS.
 //
 // Returns a string containing the normalized name for the Operating System.
 func normalizeOS(name string) string {
 	sp := strings.SplitN(name, " ", 3)
-	if len(sp) != 3 || sp[1] != "NT" {
-		return name
+
+	if len(sp) == 3 && sp[1] == "NT" {
+		switch sp[2] {
+		case "5.0":
+			return "Windows 2000"
+		case "5.01":
+			return "Windows 2000, Service Pack 1 (SP1)"
+		case "5.1":
+			return "Windows XP"
+		case "5.2":
+			return "Windows XP x64 Edition"
+		case "6.0":
+			return "Windows Vista"
+		case "6.1":
+			return "Windows 7"
+		case "6.2":
+			return "Windows 8"
+		case "6.3":
+			return "Windows 8.1"
+		case "10.0":
+			return "Windows 10"
+		}
 	}
 
-	switch sp[2] {
-	case "5.0":
-		return "Windows 2000"
-	case "5.01":
-		return "Windows 2000, Service Pack 1 (SP1)"
-	case "5.1":
-		return "Windows XP"
-	case "5.2":
-		return "Windows XP x64 Edition"
-	case "6.0":
-		return "Windows Vista"
-	case "6.1":
-		return "Windows 7"
-	case "6.2":
-		return "Windows 8"
-	case "6.3":
-		return "Windows 8.1"
-	case "10.0":
-		return "Windows 10"
+	if sp[0] == "CPU" {
+		matches := iosRegexp.FindStringSubmatch(name)
+		if len(matches) > 1 {
+			version := strings.Replace(matches[1], "_", ".", -1)
+			return "iOS " + version
+		}
 	}
+
 	return name
 }
 

@@ -357,7 +357,7 @@ var uastrings = []struct {
 	{
 		title:    "iPhone7",
 		ua:       "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0_3 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11B511 Safari/9537.53",
-		expected: "Mozilla:5.0 Platform:iPhone OS:CPU iPhone OS 7_0_3 like Mac OS X Browser:Safari-7.0 Engine:AppleWebKit-537.51.1 Bot:false Mobile:true",
+		expected: "Mozilla:5.0 Platform:iPhone OS:iOS 7.0.3 Browser:Safari-7.0 Engine:AppleWebKit-537.51.1 Bot:false Mobile:true",
 	},
 	{
 		title:    "iPhone",
@@ -372,7 +372,7 @@ var uastrings = []struct {
 	{
 		title:    "iPad",
 		ua:       "Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B367 Safari/531.21.10",
-		expected: "Mozilla:5.0 Platform:iPad OS:CPU OS 3_2 like Mac OS X Localization:en-us Browser:Safari-4.0.4 Engine:AppleWebKit-531.21.10 Bot:false Mobile:true",
+		expected: "Mozilla:5.0 Platform:iPad OS:iOS 3.2 Localization:en-us Browser:Safari-4.0.4 Engine:AppleWebKit-531.21.10 Bot:false Mobile:true",
 	},
 	{
 		title:    "webOS",
