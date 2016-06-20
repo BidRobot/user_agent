@@ -161,12 +161,12 @@ var uastrings = []struct {
 	{
 		title:    "FirefoxMac",
 		ua:       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:2.0b8) Gecko/20100101 Firefox/4.0b8",
-		expected: "Mozilla:5.0 Platform:Macintosh OS:Intel Mac OS X 10.6 Browser:Firefox-4.0b8 Engine:Gecko-20100101 Bot:false Mobile:false",
+		expected: "Mozilla:5.0 Platform:Macintosh OS:MacOS 10.6 Browser:Firefox-4.0b8 Engine:Gecko-20100101 Bot:false Mobile:false",
 	},
 	{
 		title:    "FirefoxMacLoc",
 		ua:       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13",
-		expected: "Mozilla:5.0 Platform:Macintosh OS:Intel Mac OS X 10.6 Localization:en-US Browser:Firefox-3.6.13 Engine:Gecko-20101203 Bot:false Mobile:false",
+		expected: "Mozilla:5.0 Platform:Macintosh OS:MacOS 10.6 Localization:en-US Browser:Firefox-3.6.13 Engine:Gecko-20101203 Bot:false Mobile:false",
 	},
 	{
 		title:    "FirefoxLinux",
@@ -186,7 +186,7 @@ var uastrings = []struct {
 	{
 		title:    "CaminoMac",
 		ua:       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en; rv:1.8.1.14) Gecko/20080409 Camino/1.6 (like Firefox/2.0.0.14)",
-		expected: "Mozilla:5.0 Platform:Macintosh OS:Intel Mac OS X Localization:en Browser:Camino-1.6 Engine:Gecko-20080409 Bot:false Mobile:false",
+		expected: "Mozilla:5.0 Platform:Macintosh OS:MacOS 10 Localization:en Browser:Camino-1.6 Engine:Gecko-20080409 Bot:false Mobile:false",
 	},
 	{
 		title:    "Iceweasel",
@@ -196,7 +196,7 @@ var uastrings = []struct {
 	{
 		title:    "SeaMonkey",
 		ua:       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.1.4) Gecko/20091017 SeaMonkey/2.0",
-		expected: "Mozilla:5.0 Platform:Macintosh OS:Intel Mac OS X 10.6 Localization:en-US Browser:SeaMonkey-2.0 Engine:Gecko-20091017 Bot:false Mobile:false",
+		expected: "Mozilla:5.0 Platform:Macintosh OS:MacOS 10.6 Localization:en-US Browser:SeaMonkey-2.0 Engine:Gecko-20091017 Bot:false Mobile:false",
 	},
 	{
 		title:    "AndroidFirefox",
@@ -233,7 +233,7 @@ var uastrings = []struct {
 	{
 		title:    "OperaMac",
 		ua:       "Opera/9.27 (Macintosh; Intel Mac OS X; U; en)",
-		expected: "Platform:Macintosh OS:Intel Mac OS X Localization:en Browser:Opera-9.27 Engine:Presto Bot:false Mobile:false",
+		expected: "Platform:Macintosh OS:MacOS 10 Localization:en Browser:Opera-9.27 Engine:Presto Bot:false Mobile:false",
 	},
 	{
 		title:    "OperaWin",
@@ -342,12 +342,12 @@ var uastrings = []struct {
 	{
 		title:    "ChromeMac",
 		ua:       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_5; en-US) AppleWebKit/534.10 (KHTML, like Gecko) Chrome/8.0.552.231 Safari/534.10",
-		expected: "Mozilla:5.0 Platform:Macintosh OS:Intel Mac OS X 10_6_5 Localization:en-US Browser:Chrome-8.0.552.231 Engine:AppleWebKit-534.10 Bot:false Mobile:false",
+		expected: "Mozilla:5.0 Platform:Macintosh OS:MacOS 10.6.5 Localization:en-US Browser:Chrome-8.0.552.231 Engine:AppleWebKit-534.10 Bot:false Mobile:false",
 	},
 	{
 		title:    "SafariMac",
 		ua:       "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-us) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16",
-		expected: "Mozilla:5.0 Platform:Macintosh OS:Intel Mac OS X 10_6_3 Localization:en-us Browser:Safari-5.0 Engine:AppleWebKit-533.16 Bot:false Mobile:false",
+		expected: "Mozilla:5.0 Platform:Macintosh OS:MacOS 10.6.3 Localization:en-us Browser:Safari-5.0 Engine:AppleWebKit-533.16 Bot:false Mobile:false",
 	},
 	{
 		title:    "SafariWin",

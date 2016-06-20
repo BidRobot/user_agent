@@ -18,7 +18,7 @@ var (
 //
 // Returns a string containing the normalized name for the Operating System.
 func normalizeOS(name string) string {
-	sp := strings.SplitN(name, " ", 3)
+	sp := strings.SplitN(name, " ", -1)
 
 	if len(sp) == 3 && sp[1] == "NT" {
 		switch sp[2] {
@@ -49,6 +49,19 @@ func normalizeOS(name string) string {
 			version := strings.Replace(matches[1], "_", ".", -1)
 			return "iOS " + version
 		}
+	}
+
+	if sp[0] == "Intel" && sp[1] == "Mac" && sp[2] == "OS" {
+		var version string
+		if sp[3] == "X" {
+			if len(sp) > 4 {
+				version = strings.Replace(sp[4], "_", ".", -1)
+			} else {
+				version = "10"
+			}
+		}
+
+		return "MacOS " + version
 	}
 
 	return name
@@ -198,7 +211,7 @@ func opera(p *UserAgent, comment []string) {
 		}
 		p.platform = comment[0]
 		if slen > 1 {
-			p.os = comment[1]
+			p.os = normalizeOS(comment[1])
 			if slen > 3 {
 				p.localization = comment[3]
 			}
